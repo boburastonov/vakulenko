@@ -17,12 +17,42 @@
 }
 
 body {
-  color: black;
+  color: white;
   background: white;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+.main-pr {
+  background: url(../assets/hero-bg.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.active-btn {
+  background-color: #2e7bff;
+}
+
+.active-mobilebtn {
+  color: #2e7bff;
+  background-color: white !important;
+}
+
+.btn-group button {
+  border-color: white !important;
+}
+
+@media (max-width: 768px) {
+  .nav-list {
+    display: none;
+  }
+
+  .btns-pr {
+    display: none;
   }
 }

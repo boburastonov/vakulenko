@@ -1,9 +1,13 @@
+import Navbar from "@/components/navbar";
 import Image from "next/image";
+import bg from '../assets/hero-bg.jpeg'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>Salom Dunyo</h1>
+    <main>
+      <section className="main-pr flex flex-col">
+        <Navbar />
+      </section>
     </main>
   );
 }
