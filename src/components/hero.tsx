@@ -18,6 +18,7 @@ const Hero = () => {
     const phoneNumber = document.getElementById("phone-number").value;
     const messageContent = `Name: ${name} \nPhone Number: ${phoneNumber}`;
 
+    
     axios({
       url: url,
       method: "POST",
