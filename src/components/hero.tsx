@@ -7,7 +7,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Hero = () => {
-  const sendMessage = (e) => {
+  const sendMessage = (e:any) => {
     const notify = () =>
       toast.success("Your reservation has been sent successfully!");
     e.preventDefault();
@@ -18,7 +18,7 @@ const Hero = () => {
     const phoneNumber = document.getElementById("phone-number").value;
     const messageContent = `Name: ${name} \nPhone Number: ${phoneNumber}`;
 
-    
+
     axios({
       url: url,
       method: "POST",
