@@ -6,16 +6,9 @@ import Logo from "../assets/logo.png";
 import { RiMenu3Fill } from "react-icons/ri";
 import { IoClose } from "react-icons/io5";
 import MobileNav from "./MobileNav";
-import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
   const [open, setOpen] = useState<boolean>(false);
-  const { t, i18n } = useTranslation();
-  const changeLang = (e: string) => {
-    i18n.changeLanguage(e);
-    
-  };
-
   return (
     <header className="py-1 relative">
       <div className="max-w-7xl mx-auto px-3 flex items-center justify-between">
@@ -28,7 +21,7 @@ const Navbar = () => {
               className="text-[14px] leading-[1.55] font-bold border border-solid border-transparent transition-all duration-[0.3s] ease-in-out px-7 py-2 rounded-[30px] hover:border-[#2e7bff] active:opacity-85"
               href={"#portfolio"}
             >
-              {t("КЕЙСЫ")}
+              КЕЙСЫ
             </Link>
           </li>
           <li className="mx-9">
@@ -36,7 +29,7 @@ const Navbar = () => {
               className="text-[14px] leading-[1.55] font-bold border border-solid border-transparent transition-all duration-[0.3s] ease-in-out px-7 py-2 rounded-[30px] hover:border-[#2e7bff] active:opacity-85"
               href={"#reviews"}
             >
-              {t("ОТЗЫВЫ")}
+              ОТЗЫВЫ
             </Link>
           </li>
           <li className="mx-9">
@@ -44,7 +37,7 @@ const Navbar = () => {
               className="text-[14px] leading-[1.55] font-bold border border-solid border-transparent transition-all duration-[0.3s] ease-in-out px-7 py-2 rounded-[30px] hover:border-[#2e7bff] active:opacity-85"
               href={"#contact"}
             >
-              {t("КОНТАКТЫ")}
+              КОНТАКТЫ
             </Link>
           </li>
         </ul>
@@ -53,16 +46,15 @@ const Navbar = () => {
             <Link
               className="text-[14px] leading-[1.55] font-semibold"
               href={"#"}
-              onClick={() => changeLang("uz")}
             >
               UZ
             </Link>
           </button>
           <button className="active-btn text-center border border-solid border-[#2e7bff] px-4 py-1 hover:opacity-85">
             <Link
+            
               className="text-[14px] leading-[1.55] font-semibold"
               href={"#"}
-              onClick={() => changeLang("ru")}
             >
               RU
             </Link>
