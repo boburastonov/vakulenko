@@ -1,23 +1,30 @@
 "use client";
-import React from "react";
-import PhoneInput from "react-phone-input-2";
+import React, { useState } from "react";
 import "react-phone-input-2/lib/style.css";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Hero = () => {
-  const sendMessage = (e:any) => {
+  const [inputValue, setInputValue] = useState<string>("");
+  const [inputNumber, setInputNumber] = useState<string>("");
+  const handleChange = (event: any) => {
+    setInputValue(event.target.value);
+  };
+  const handleChangeNumber = (event: any) => {
+    setInputNumber(event.target.value);
+  };
+
+  const sendMessage = (e: any) => {
     const notify = () =>
       toast.success("Your reservation has been sent successfully!");
     e.preventDefault();
     const token = "7229813830:AAFlDf6El0NDlFH5wod5x8vT1jV-IJhEKU8";
     const chat_id = "5730538728";
     const url = `https://api.telegram.org/bot${token}/sendMessage`;
-    const name = document.getElementById("name").value;
-    const phoneNumber = document.getElementById("phone-number").value;
-    const messageContent = `Name: ${name} \nPhone Number: ${phoneNumber}`;
-
+    // const name = document.getElementById("name").value;
+    // const phoneNumber = document.getElementById("phone-number").value;
+    const messageContent = `Name: ${inputValue} \nPhone Number: ${inputNumber}`;
 
     axios({
       url: url,
@@ -28,7 +35,7 @@ const Hero = () => {
       },
     })
       .then((res) => {
-        document.getElementById("message-form")?.onreset();
+        // document.getElementById("message-form")?.onreset();
         notify();
       })
       .catch((err) => {
@@ -62,6 +69,8 @@ const Hero = () => {
             <input
               id="name"
               type="text"
+              value={inputValue}
+              onChange={handleChange}
               placeholder="Имя"
               autoComplete="off"
               className="w-full md:h-[50px] h-11 bg-[#2e2e2e] rounded-[30px] text-base md:font-bold md:px-5 md:mb-6 font-semibold border border-solid border-[#e0e0e0] p-0 px-4 mb-5 cursor-pointer"
@@ -69,6 +78,8 @@ const Hero = () => {
             <input
               type="tel"
               id="phone-number"
+              value={inputNumber}
+              onChange={handleChangeNumber}
               autoComplete="off"
               placeholder="+998 99 899 77 54"
               className="w-full md:h-[50px] h-11 bg-[#2e2e2e] rounded-[30px] text-base md:font-bold md:px-5 md:mb-6 font-semibold border border-solid border-[#e0e0e0] p-0 px-4 mb-5 cursor-pointer"
