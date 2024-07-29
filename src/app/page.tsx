@@ -1,6 +1,6 @@
 import Navbar from "@/components/navbar";
 import Image from "next/image";
-import bg from '../assets/hero-bg.jpeg'
+import bg from "../assets/hero-bg.jpeg";
 import Hero from "@/components/hero";
 import Results from "@/components/results";
 
