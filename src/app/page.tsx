@@ -5,6 +5,7 @@ import Hero from "@/components/hero";
 import Results from "@/components/results";
 import AuthForm from "@/components/auth-form";
 import Recommendation from "@/components/recommendation";
+import Contact from "@/components/contact";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Results />
       <AuthForm />
       <Recommendation />
+      <Contact />
     </main>
   );
 }
