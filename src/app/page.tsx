@@ -3,6 +3,7 @@ import Image from "next/image";
 import bg from "../assets/hero-bg.jpeg";
 import Hero from "@/components/hero";
 import Results from "@/components/results";
+import AuthForm from "@/components/auth-form";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
         <Hero />
       </section>
       <Results />
+      <AuthForm />
     </main>
   );
 }
