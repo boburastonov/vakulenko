@@ -46,10 +46,10 @@ const Contact: React.FC = () => {
       });
   };
   return (
-    <section id="contact" className="contact py-[150px]">
-      <div className="max-w-7xl mx-auto px-3 flex items-center justify-between">
-        <div className="w-[41%]">
-          <h1 className="text-[52px] leading-[65px] font-bold mb-14">
+    <section id="contact" className="contact md:py-[150px] py-[90px]">
+      <div className="max-w-7xl mx-auto px-3 flex md:flex-row flex-col items-center justify-between">
+        <div className="md:w-[41%] md:text-left w-[75%] text-center md:m-0 mb-6">
+          <h1 className="md:text-[42px] md:leading-[53px] md:font-bold md:mb-14 text-[38px] leading-[40px] font-semibold mb-8">
             Готовы к потоку клиентов?
           </h1>
           <p className="text-[19px] leading-[29px] font-normal">
@@ -57,7 +57,7 @@ const Contact: React.FC = () => {
             обращения клиентов уже через 48 часов
           </p>
         </div>
-        <div className="lg:w-[40%] lg:p-16 lg:ml-6 md:w-[60%] md:p-14 p-10 m-0 border-[3px] border-solid border-[#2e7bff] text-center text-white bg-[#0000009a] rounded-[30px]">
+        <div className="lg:w-[40%] lg:p-16 lg:ml-6 w-[80%] md:p-14 p-10 m-0 border-[3px] border-solid border-[#2e7bff] text-center text-white bg-[#0000009a] rounded-[30px]">
           <h2 className="lg:mb-8 md:mb-6 md:text-[24px] leading-[37px] mb-4 text-[22px] font-bold">
             СТРАТЕГИЯ БЕСПЛАТНО
           </h2>
