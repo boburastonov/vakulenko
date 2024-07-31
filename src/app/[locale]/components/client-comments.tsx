@@ -63,7 +63,7 @@ const ClientComments: React.FC = () => {
         <span className="lg:block absolute w-[172px] left-[542px] h-[3px] bg-[#2e7bff]"></span>{" "}
         {t("от клиентов")}
       </h1>
-      <Slider {...settings}>
+      {/* <Slider {...settings}>
         <div>
           <h3>1</h3>
         </div>
@@ -82,7 +82,7 @@ const ClientComments: React.FC = () => {
         <div>
           <h3>6</h3>
         </div>
-      </Slider>
+      </Slider> */}
     </section>
   );
 };
