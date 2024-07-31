@@ -60,7 +60,7 @@ const Results: React.FC = () => {
             <ResultCard
               bgURL={img2}
               cardHeading={t("Realty Summit")}
-              cardText={t("Продажа билетов на саммит.")}
+              cardText={t("Продажа билетов на саммит")}
               advertPrice="2594$"
               selledCount="473"
               itemPrice="56 059$"
@@ -77,7 +77,7 @@ const Results: React.FC = () => {
               cardText={t("Пригон автомобилей под заказ")}
               advertPrice="500"
               selledCount="0,8$"
-              itemPrice={`2 ${t("мес.")}`}
+              itemPrice={`2 ${t("мес")}`}
               adverText={t("целевых обращений")}
               counText={t("стоимость заявки")}
               priceText={t("длительность кампании")}
@@ -91,7 +91,7 @@ const Results: React.FC = () => {
               cardText={t("Продажа таун-хаусов")}
               advertPrice="870"
               selledCount="0,68$"
-              itemPrice={`3 ${t("мес.")}`}
+              itemPrice={`3 ${t("мес")}`}
               adverText={t("целевых обращений")}
               counText={t("стоимость заявки")}
               priceText={t("длительность кампании")}
@@ -107,7 +107,7 @@ const Results: React.FC = () => {
               )}
               advertPrice="1200"
               selledCount="0,87$"
-              itemPrice={`2 ${t("мес.")}`}
+              itemPrice={`2 ${t("мес")}`}
               adverText={t("целевых обращений")}
               counText={t("стоимость заявки")}
               priceText={t("длительность кампании")}
@@ -123,7 +123,7 @@ const Results: React.FC = () => {
               )}
               advertPrice="150 000$"
               selledCount="800$"
-              itemPrice={`1 ${t("мес.")}`}
+              itemPrice={`1 ${t("мес")}`}
               adverText={t("продали на сумму")}
               counText={t("рекламный бюджет")}
               priceText={t("длительность кампании")}
@@ -139,7 +139,7 @@ const Results: React.FC = () => {
               )}
               advertPrice="500"
               selledCount="1,2$"
-              itemPrice={`1 ${t("мес.")}`}
+              itemPrice={`1 ${t("мес")}`}
               adverText={t("целевых обращений")}
               counText={t("стоимость заявки")}
               priceText={t("длительность кампании")}
@@ -155,7 +155,7 @@ const Results: React.FC = () => {
               )}
               advertPrice="1200"
               selledCount="0,7$"
-              itemPrice={`2 ${t("мес.")}`}
+              itemPrice={`2 ${t("мес")}`}
               adverText={t("целевых обращений")}
               counText={t("стоимость заявки")}
               priceText={t("длительность кампании")}
@@ -171,7 +171,7 @@ const Results: React.FC = () => {
               )}
               advertPrice="122"
               selledCount="2$"
-              itemPrice={`3 ${t("нед.")}`}
+              itemPrice={`3 ${t("нед")}`}
               adverText={t("целевых обращений")}
               counText={t("стоимость заявки")}
               priceText={t("длительность кампании")}
@@ -187,7 +187,7 @@ const Results: React.FC = () => {
               )}
               advertPrice="280"
               selledCount="1,6$"
-              itemPrice={`1 ${t("мес.")}`}
+              itemPrice={`1 ${t("мес")}`}
               adverText={t("целевых обращений")}
               counText={t("стоимость заявки")}
               priceText={t("длительность кампании")}
@@ -203,7 +203,7 @@ const Results: React.FC = () => {
               )}
               advertPrice="1485"
               selledCount="0,55$"
-              itemPrice={`7 ${t("мес.")}`}
+              itemPrice={`7 ${t("мес")}`}
               adverText={t("целевых обращений")}
               counText={t("стоимость заявки")}
               priceText={t("длительность кампании")}
@@ -219,7 +219,7 @@ const Results: React.FC = () => {
               )}
               advertPrice="1351"
               selledCount="1,38$"
-              itemPrice={`7 ${t("дн.")}`}
+              itemPrice={`7 ${t("дн")}`}
               adverText={t("Регистрация на вебинар")}
               counText={t("стоимость регистрации")}
               priceText={t("длительность кампании")}
@@ -231,7 +231,7 @@ const Results: React.FC = () => {
             className="text-white text-[16px] leading-[1.55] font-semibold bg-[#237bff] border-[2px] border-solid border-[#2e7bff] rounded-[30px] inline-block py-4 px-14 mr-auto mb-16 hover:opacity-90"
             onClick={() => setOpen(true)}
           >
-            Больше кейсов
+            {t('Больше кейсов')}
           </button>
           {open ? (
             <>
@@ -244,7 +244,7 @@ const Results: React.FC = () => {
                   )}
                   advertPrice="200"
                   selledCount="6,1$"
-                  itemPrice={`1 ${t("мес.")}`}
+                  itemPrice={`1 ${t("мес")}`}
                   adverText={t("целевых обращений")}
                   counText={t("стоимость заявки")}
                   priceText={t("длительность кампании")}
@@ -260,7 +260,7 @@ const Results: React.FC = () => {
                   )}
                   advertPrice="500"
                   selledCount="0,5$"
-                  itemPrice={`1 ${t("мес.")}`}
+                  itemPrice={`1 ${t("мес")}`}
                   adverText={t("целевых обращений")}
                   counText={t("стоимость заявки")}
                   priceText={t("длительность кампании")}
@@ -274,7 +274,7 @@ const Results: React.FC = () => {
                   cardText={t("Строительство домов под ключ")}
                   advertPrice="130"
                   selledCount="3,5$"
-                  itemPrice={`2 ${t("мес.")}`}
+                  itemPrice={`2 ${t("мес")}`}
                   adverText={t("целевых обращений")}
                   counText={t("стоимость заявки")}
                   priceText={t("длительность кампании")}
@@ -288,7 +288,7 @@ const Results: React.FC = () => {
                   cardText={t("Озеленение участков, продажа рулонного газона")}
                   advertPrice="150"
                   selledCount="2,5$"
-                  itemPrice={`1 ${t("мес.")}`}
+                  itemPrice={`1 ${t("мес")}`}
                   adverText={t("целевых обращений")}
                   counText={t("стоимость заявки")}
                   priceText={t("длительность кампании")}
@@ -302,7 +302,7 @@ const Results: React.FC = () => {
                   cardText={t("Продажа разработок презентаций")}
                   advertPrice="100"
                   selledCount="5,5$"
-                  itemPrice={`2 ${t("мес.")}`}
+                  itemPrice={`2 ${t("мес")}`}
                   adverText={t("целевых обращений")}
                   counText={t("стоимость заявки")}
                   priceText={t("длительность кампании")}
@@ -316,7 +316,7 @@ const Results: React.FC = () => {
                   cardText={t("Остекление фасадов зданий")}
                   advertPrice="136"
                   selledCount="2,5$"
-                  itemPrice={`2 ${t("мес.")}`}
+                  itemPrice={`2 ${t("мес")}`}
                   adverText={t("целевых обращений")}
                   counText={t("стоимость заявки")}
                   priceText={t("длительность кампании")}
@@ -330,7 +330,7 @@ const Results: React.FC = () => {
                   cardText={t("Продажа входных и межкомнатных дверей")}
                   advertPrice="256"
                   selledCount="1,2$"
-                  itemPrice={`2 ${t("мес.")}`}
+                  itemPrice={`2 ${t("мес")}`}
                   adverText={t("целевых обращений")}
                   counText={t("стоимость заявки")}
                   priceText={t("длительность кампании")}
@@ -344,7 +344,7 @@ const Results: React.FC = () => {
                   cardText={t("Онлайн клуб предпринимателей")}
                   advertPrice="157"
                   selledCount="1,2$"
-                  itemPrice={`1 ${t("мес.")}`}
+                  itemPrice={`1 ${t("мес")}`}
                   adverText={t("целевых обращений")}
                   counText={t("стоимость заявки")}
                   priceText={t("длительность кампании")}

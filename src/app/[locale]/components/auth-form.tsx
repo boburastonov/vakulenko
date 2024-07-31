@@ -68,7 +68,7 @@ const AuthForm: React.FC = () => {
       <div className="max-w-7xl mx-auto px-3 flex lg:justify-between justify-center items-center">
         <div className="form-pr lg:w-[48%] lg:text-left w-[80%] text-center ">
           <h2 className="lg:mb-8 md:mb-6 lg:relative md:text-[42px] md:leading-[65px] leading-[45px] mb-4 text-[29px] font-bold">
-            {t("Есть конкретная цель")}?{" "}
+            {t("Есть конкретная цель")}{" "}
             <span className="lg:block absolute w-[120px] right-[127px] bottom-[6px] h-[2px] bg-[#2e7bff]"></span>
           </h2>
           <p className="md:mb-12 md:text-[20px] md:leading-[31px] leading-[28px] mb-8 text-[18px] font-normal">

@@ -26,7 +26,7 @@ const Recommendation: React.FC = () => {
           <RecommendationCard
             cardTitle={t("Сергей")}
             cardText={`${t(
-              "Основатель крупнейшего ивент комьюнити."
+              "Основатель крупнейшего ивент комьюнити"
             )} Open Event Club`}
             imgSource={Sergey}
             appeals={7400}
