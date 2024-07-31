@@ -1,57 +1,20 @@
+"use client";
 import React from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import { useTranslations } from "next-intl";
-
-// Slider settings interface for TypeScript
-interface SliderSettings {
-  speed: number;
-  slidesToShow: number;
-  slidesToScroll: number;
-  infinite: boolean;
-  autoplay: boolean;
-  autoplaySpeed: number;
-  responsive: Array<{
-    breakpoint: number;
-    settings: {
-      slidesToShow: number;
-      slidesToScroll: number;
-      initialSlide?: number;
-      infinite?: boolean;
-      dots?: boolean;
-    };
-  }>;
-}
-
-const settings: SliderSettings = {
-  speed: 600,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  infinite: true,
-  autoplay: true,
-  autoplaySpeed: 1800,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
-        initialSlide: 1,
-        infinite: true,
-        dots: false,
-      },
-    },
-    {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        initialSlide: 1,
-      },
-    },
-  ],
-};
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation } from "swiper/modules";
+// import Swiper and modules styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import Image from "next/image";
+import slideOne from "../../../assets/slide-1.jpg";
+import slideTwo from "../../../assets/slide-2.jpg";
+import slideThree from "../../../assets/slide-3.jpg";
+import slideFour from "../../../assets/slide-4.jpg";
+import slideFive from "../../../assets/slide-5.jpg";
+import slideSix from "../../../assets/slide-6.jpg";
 
 const ClientComments: React.FC = () => {
   const t = useTranslations();
@@ -63,26 +26,104 @@ const ClientComments: React.FC = () => {
         <span className="lg:block absolute w-[172px] left-[542px] h-[3px] bg-[#2e7bff]"></span>{" "}
         {t("от клиентов")}
       </h1>
-      {/* <Slider {...settings}>
-        <div>
-          <h3>1</h3>
-        </div>
-        <div>
-          <h3>2</h3>
-        </div>
-        <div>
-          <h3>3</h3>
-        </div>
-        <div>
-          <h3>4</h3>
-        </div>
-        <div>
-          <h3>5</h3>
-        </div>
-        <div>
-          <h3>6</h3>
-        </div>
-      </Slider> */}
+      <Swiper
+        slidesPerView={5}
+        spaceBetween={30}
+        centeredSlides={true}
+        autoplay = {{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
+        loop={true}
+        breakpoints={{
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          540: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 4,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 5,
+            spaceBetween: 50,
+          },
+        }}
+        navigation={true}
+        modules={[Autoplay, Navigation]}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+          <div className="w-[200px] h-[400px]">
+            <Image
+            className="w-full h-full"
+              src={slideOne}
+              width={200}
+              height={400}
+              alt="comment screenshot"
+            />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="w-[200px] h-[400px]">
+            <Image
+            className="w-full h-full"
+              src={slideTwo}
+              width={200}
+              height={400}
+              alt="comment screenshot"
+            />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="w-[200px] h-[400px]">
+            <Image
+            className="w-full h-full"
+              src={slideThree}
+              width={200}
+              height={400}
+              alt="comment screenshot"
+            />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="w-[200px] h-[400px]">
+            <Image
+            className="w-full h-full"
+              src={slideFour}
+              width={200}
+              height={400}
+              alt="comment screenshot"
+            />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="w-[200px] h-[400px]">
+            <Image
+            className="w-full h-full"
+              src={slideFive}
+              width={200}
+              height={400}
+              alt="comment screenshot"
+            />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="w-[200px] h-[400px]">
+            <Image
+            className="w-full h-full"
+              src={slideSix}
+              width={200}
+              height={400}
+              alt="comment screenshot"
+            />
+          </div>
+        </SwiperSlide>
+      </Swiper>
     </section>
   );
 };
