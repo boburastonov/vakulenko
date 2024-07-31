@@ -7,12 +7,14 @@ import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import ReactSlider from "react-slider";
 import Image from "next/image";
-import Author from "../assets/author.jpeg";
+import Author from "../../../assets/author.jpeg";
+import { useTranslations } from "next-intl";
 
 const MIN = 30;
 const MAX = 500;
 
 const AuthForm: React.FC = () => {
+  const t = useTranslations();
   const [inputValue, setInputValue] = useState<string>("");
   const [value, setValue] = useState<string | undefined>(undefined);
   const [sliderValue, setSliderValue] = useState([MIN, MAX]);
@@ -58,11 +60,13 @@ const AuthForm: React.FC = () => {
       <div className="max-w-7xl mx-auto px-3 flex lg:justify-between justify-center items-center">
         <div className="form-pr lg:w-[48%] lg:text-left w-[80%] text-center ">
           <h2 className="lg:mb-8 md:mb-6 lg:relative md:text-[42px] md:leading-[65px] leading-[45px] mb-4 text-[29px] font-bold">
-            Есть конкретная цель? <span className="lg:block absolute w-[120px] right-[127px] bottom-[6px] h-[2px] bg-[#2e7bff]"></span>
+            {t("Есть конкретная цель")}?{" "}
+            <span className="lg:block absolute w-[120px] right-[127px] bottom-[6px] h-[2px] bg-[#2e7bff]"></span>
           </h2>
           <p className="md:mb-12 md:text-[20px] md:leading-[31px] leading-[28px] mb-8 text-[18px] font-normal">
-            Заполняйте форму и укажите желаемое количество клиентов, а я
-            предложу путь к достижению Ваших целей
+            {t(
+              "Заполняйте форму и укажите желаемое количество клиентов, а я предложу путь к достижению Ваших целей"
+            )}
           </p>
           <form
             onSubmit={sendMessage}
@@ -74,7 +78,8 @@ const AuthForm: React.FC = () => {
               type="text"
               value={inputValue}
               onChange={handleChange}
-              placeholder="Имя"
+              placeholder={t("Имя")}
+              required
               autoComplete="off"
               className="w-full md:h-[50px] text-black h-11 bg-[#fff] rounded-[30px] text-base md:px-5 md:mb-6 font-normal border border-solid border-[#e0e0e0] p-0 px-4 mb-5 outline-none cursor-pointer"
             />
@@ -84,6 +89,7 @@ const AuthForm: React.FC = () => {
               type="tel"
               international
               defaultCountry="UA"
+              required
               onChange={setValue}
               className="w-full md:h-[50px] text-black h-11 bg-[#fff] rounded-[30px] text-base md:px-5 md:mb-6 font-normal border border-solid border-[#e0e0e0] p-0 px-4 mb-5 outline-none cursor-pointer"
             />
@@ -92,7 +98,7 @@ const AuthForm: React.FC = () => {
               type="text"
               value={inputValue}
               onChange={handleChange}
-              placeholder="Регион продвижения"
+              placeholder={t("Регион продвижения")}
               autoComplete="off"
               className="w-full md:h-[50px] text-black h-11 bg-[#fff] rounded-[30px] text-base md:px-5 md:mb-6 font-normal border border-solid border-[#e0e0e0] p-0 px-4 mb-5 outline-none cursor-pointer"
             />
@@ -101,7 +107,7 @@ const AuthForm: React.FC = () => {
               type="text"
               value={inputValue}
               onChange={handleChange}
-              placeholder="Средний чек"
+              placeholder={t("Средний чек")}
               autoComplete="off"
               className="w-full md:h-[50px] text-black h-11 bg-[#fff] rounded-[30px] text-base md:px-5 md:mb-6 font-normal border border-solid border-[#e0e0e0] p-0 px-4 mb-5 outline-none cursor-pointer"
             />
@@ -125,7 +131,7 @@ const AuthForm: React.FC = () => {
               )}
             /> */}
             <button className="w-full md:text-[14px] text-[12px] text-white bg-[#2e7bff] border border-solid border-[#2e7bff] md:py-3 py-2 px-[30px] text-center inline-block rounded-[25px] font-medium capitalize tracking-[0.5px] transition-all duration-[0.3s] hover:opacity-90">
-              УЗНАТЬ РЕЗУЛЬТАТ
+              {t('УЗНАТЬ РЕЗУЛЬТАТ')}
             </button>
             <ToastContainer />
           </form>

@@ -1,14 +1,21 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Logo from "../assets/logo.png";
+import Logo from "../../../assets/logo.png";
 import { RiMenu3Fill } from "react-icons/ri";
 import { IoClose } from "react-icons/io5";
 import MobileNav from "./MobileNav";
+import { useTranslations } from "next-intl";
 
 const Navbar = () => {
+  const t = useTranslations();
   const [open, setOpen] = useState<boolean>(false);
+  const [activeButton, setActiveButton] = useState("button1");
+
+  useEffect(() => {
+    setActiveButton(window.location.pathname);
+  }, []);
   return (
     <header className="py-1 relative">
       <div className="max-w-7xl mx-auto px-3 flex items-center justify-between">
@@ -21,7 +28,7 @@ const Navbar = () => {
               className="text-[14px] leading-[1.55] font-bold border border-solid border-transparent transition-all duration-[0.3s] ease-in-out px-7 py-2 rounded-[30px] hover:border-[#2e7bff] active:opacity-85"
               href={"#portfolio"}
             >
-              КЕЙСЫ
+              {t("КЕЙСЫ")}
             </Link>
           </li>
           <li className="mx-9">
@@ -29,7 +36,7 @@ const Navbar = () => {
               className="text-[14px] leading-[1.55] font-bold border border-solid border-transparent transition-all duration-[0.3s] ease-in-out px-7 py-2 rounded-[30px] hover:border-[#2e7bff] active:opacity-85"
               href={"#reviews"}
             >
-              ОТЗЫВЫ
+              {t("ОТЗЫВЫ")}
             </Link>
           </li>
           <li className="mx-9">
@@ -37,24 +44,31 @@ const Navbar = () => {
               className="text-[14px] leading-[1.55] font-bold border border-solid border-transparent transition-all duration-[0.3s] ease-in-out px-7 py-2 rounded-[30px] hover:border-[#2e7bff] active:opacity-85"
               href={"#contact"}
             >
-              КОНТАКТЫ
+              {t("КОНТАКТЫ")}
             </Link>
           </li>
         </ul>
         <div className="btns-pr lg:flex items-center md:hidden">
-          <button className="text-center border border-solid border-[#2e7bff] px-4 py-1 hover:opacity-85">
+          <button
+            className={`${
+              activeButton === "/uz" ? "bg-[#2e7bff]" : "bg-transparent"
+            } text-center border border-solid border-[#2e7bff] px-4 py-1 hover:opacity-85`}
+          >
             <Link
               className="text-[14px] leading-[1.55] font-semibold"
-              href={"#"}
+              href="/uz"
             >
               UZ
             </Link>
           </button>
-          <button className="active-btn text-center border border-solid border-[#2e7bff] px-4 py-1 hover:opacity-85">
+          <button
+            className={`${
+              activeButton === "/ru" ? "bg-[#2e7bff]" : "bg-transparent"
+            } text-center border border-solid border-[#2e7bff] px-4 py-1 bg-[#2e7bff] hover:opacity-85`}
+          >
             <Link
-            
               className="text-[14px] leading-[1.55] font-semibold"
-              href={"#"}
+              href="/ru"
             >
               RU
             </Link>

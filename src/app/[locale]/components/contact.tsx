@@ -5,8 +5,10 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
+import { useTranslations } from "next-intl";
 
-const Hero: React.FC = () => {
+const Contact: React.FC = () => {
+  const t = useTranslations();
   const [inputValue, setInputValue] = useState<string>("");
   const [value, setValue] = useState<string | undefined>(undefined);
   const handleChange = (event: any) => {
@@ -45,28 +47,23 @@ const Hero: React.FC = () => {
         console.log("Yuborishda xatolik,", err);
       });
   };
-
   return (
-    <section>
-      <div className="max-w-7xl mx-auto px-3 pb-11 flex flex-col lg:flex-row lg:justify-between items-center">
-        <div className="lg:w-[50%] self-start lg:py-12 lg:text-left lg:m-0 w-[75%] mx-auto text-center md:mb-7 mb-5">
-          <h1 className="text-white lg:text-[59px] lg:mb-10 lg:relative md:text-[55px] text-[47px] font-bold text-center mb-6">
-            Таргетолог
-            <span className="lg:absolute left-5 w-[370px] h-[2px] bg-[#2e7bff] lg:block md:hidden"></span>{" "}
-            Антон Вакуленко
+    <section id="contact" className="contact md:py-[150px] py-[90px]">
+      <div className="max-w-7xl mx-auto px-3 flex md:flex-row flex-col items-center justify-between">
+        <div className="md:w-[41%] md:text-left w-[75%] text-center md:m-0 mb-6">
+          <h1 className="md:text-[42px] md:leading-[53px] md:font-bold md:mb-14 text-[38px] leading-[40px] font-semibold mb-8">
+            {t('Готовы к потоку клиентов?')}
           </h1>
-          <p className="text-white md:text-[19px] text-base font-normal">
-            Увеличу продажи с помощью рекламы в интернете и предоставлю первые
-            обращения клиентов уже через 48 часов
+          <p className="text-[19px] leading-[29px] font-normal">
+            {t('Увеличу продажи с помощью рекламы в интернете и предоставлю первые обращения клиентов уже через 48 часов')}
           </p>
         </div>
-        <div className="lg:w-[40%] lg:p-16 lg:ml-6 md:w-[60%] md:p-14 p-10 m-0 border-[3px] border-solid border-[#2e7bff] text-center text-white bg-[#0000009a]">
+        <div className="lg:w-[40%] lg:p-16 lg:ml-6 w-[80%] md:p-14 p-10 m-0 border-[3px] border-solid border-[#2e7bff] text-center text-white bg-[#0000009a] rounded-[30px]">
           <h2 className="lg:mb-8 md:mb-6 md:text-[24px] leading-[37px] mb-4 text-[22px] font-bold">
-            СТРАТЕГИЯ БЕСПЛАТНО
+            {t('СТРАТЕГИЯ БЕСПЛАТНО')}
           </h2>
           <p className="lg:mb-12 md:mb-10 md:text-[18px] md:leading-[28px] leading-[22px] mb-8 text-[16px] font-normal">
-            Напишу стратегию по Таргетированной Рекламе для Вашей компании
-            бесплатно и презентую ее!
+            {t('Заполняйте форму и получите от меня бесплатную стратегию по привлечению клиентов в Ваш бизнес!')}
           </p>
           <form onSubmit={sendMessage} id="message-form">
             <input
@@ -74,7 +71,7 @@ const Hero: React.FC = () => {
               type="text"
               value={inputValue}
               onChange={handleChange}
-              placeholder="Имя"
+              placeholder={t("Имя")}
               autoComplete="off"
               className="w-full md:h-[50px] h-11 bg-[#2e2e2e] rounded-[30px] text-base md:font-bold md:px-5 md:mb-6 font-semibold border border-solid border-[#e0e0e0] p-0 px-4 mb-5 outline-none cursor-pointer"
             />
@@ -88,7 +85,7 @@ const Hero: React.FC = () => {
               className="w-full md:h-[50px] h-11 bg-[#2e2e2e] rounded-[30px] text-base md:font-bold md:px-5 md:mb-6 font-semibold border border-solid border-[#e0e0e0] p-0 px-4 mb-5 cursor-pointer"
             />
             <button className="w-full md:text-[14px] text-[12px] text-white bg-[#2e7bff] border border-solid border-[#2e7bff] md:py-3 py-2 px-[30px] text-center inline-block rounded-[25px] font-medium capitalize tracking-[0.5px] transition-all duration-[0.3s] hover:opacity-90">
-              ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ
+              {t('ОТПРАВИТЬ')}
             </button>
             <ToastContainer />
           </form>
@@ -98,4 +95,4 @@ const Hero: React.FC = () => {
   );
 };
 
-export default Hero;
+export default Contact;
