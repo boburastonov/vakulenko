@@ -114,6 +114,57 @@ body {
   ) !important;
 }
 
+.swiper-wrapper {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-left: 50px !important;
+}
+
+.swiper-slide {
+  margin-right: 25px !important;
+  margin-left: 25px !important;
+  width: 250px !important;
+}
+
+.swiper-slide-active {
+  transform: scale(3);
+}
+
+/* Range Slide */
+.horizontal-slider .example-track {
+  height: 6px;
+  border-radius: 50px;
+}
+
+.example-track.example-track-0,
+.example-track.example-track-1,
+.example-track.example-track-2 {
+  background: white;
+}
+
+.horizontal-slider .example-thumb {
+  position: absolute;
+  top: -9px;
+  width: 23px;
+  height: 23px;
+  background-color: #2e7bff;
+  cursor: pointer;
+  border-radius: 50%;
+  will-change: left;
+}
+
+.horizontal-slider .example-thumb-0 {
+  left: 50px;
+}
+
+.horizontal-slider .example-thumb-1 {
+  display: none;
+}
+
+.horizontal-slider .example-thumb:focus-visible {
+  outline: none;
+}
+
 @media (max-width: 1024px) {
   .cards .cards-box {
     display: flex;

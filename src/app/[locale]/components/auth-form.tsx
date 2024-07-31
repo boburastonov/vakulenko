@@ -16,10 +16,18 @@ const MAX = 500;
 const AuthForm: React.FC = () => {
   const t = useTranslations();
   const [inputValue, setInputValue] = useState<string>("");
+  const [regValue, setRegValue] = useState<string>("");
+  const [checkValue, setCheckValue] = useState<string>("");
   const [value, setValue] = useState<string | undefined>(undefined);
-  const [sliderValue, setSliderValue] = useState([MIN, MAX]);
+  const [sliderValue, setSliderValue] = useState<number | undefined>();
   const handleChange = (event: any) => {
     setInputValue(event.target.value);
+  };
+  const handleRegChange = (event: any) => {
+    setRegValue(event.target.value);
+  };
+  const handleCheckChange = (event: any) => {
+    setCheckValue(event.target.value);
   };
 
   const sendMessage = (e: React.FormEvent) => {
@@ -34,7 +42,7 @@ const AuthForm: React.FC = () => {
     const url = `https://api.telegram.org/bot${token}/sendMessage`;
     // const name = document.getElementById("name").value;
     // const phoneNumber = document.getElementById("phone-number").value;
-    const messageContent = `Name: ${inputValue} \nPhone Number: ${value}`;
+    const messageContent = `Name: ${inputValue} \nPhone Number: ${value} \nPromotion Region: ${regValue} \nAverage bill: ${checkValue}`;
 
     axios({
       url: url,
@@ -96,8 +104,8 @@ const AuthForm: React.FC = () => {
             <input
               id="region"
               type="text"
-              value={inputValue}
-              onChange={handleChange}
+              value={regValue}
+              onChange={handleRegChange}
               placeholder={t("Регион продвижения")}
               autoComplete="off"
               className="w-full md:h-[50px] text-black h-11 bg-[#fff] rounded-[30px] text-base md:px-5 md:mb-6 font-normal border border-solid border-[#e0e0e0] p-0 px-4 mb-5 outline-none cursor-pointer"
@@ -105,14 +113,18 @@ const AuthForm: React.FC = () => {
             <input
               id="check"
               type="text"
-              value={inputValue}
-              onChange={handleChange}
+              value={checkValue}
+              onChange={handleCheckChange}
               placeholder={t("Средний чек")}
               autoComplete="off"
               className="w-full md:h-[50px] text-black h-11 bg-[#fff] rounded-[30px] text-base md:px-5 md:mb-6 font-normal border border-solid border-[#e0e0e0] p-0 px-4 mb-5 outline-none cursor-pointer"
             />
-            {/* <ReactSlider
-              className="horizontal-slider relative w-full max-w-[240px] h-[6px] rounded-[50px] "
+            <p className="text-[20px] font-normal leading-[2rem] mb-4">
+              {t("Сколько клиентов необходимо до цели?")}
+            </p>
+            <label className="mb-5">Clients: {sliderValue}</label>
+            <ReactSlider
+              className="horizontal-slider relative w-full mb-5 mt-5 h-[6px] rounded-[50px] "
               thumbClassName="example-thumb"
               trackClassName="example-track"
               value={sliderValue}
@@ -121,17 +133,13 @@ const AuthForm: React.FC = () => {
               onChange={setSliderValue}
               pearling
               minDistance={10}
-            /> */}
-            {/* <ReactSlider
-              className="horizontal-slider"
-              thumbClassName="example-thumb"
-              trackClassName="example-track"
-              renderThumb={(props, state) => (
-                <div {...props}>{state.valueNow}</div>
-              )}
-            /> */}
+            />
+            <div className="flex items-center justify-between">
+              <p className="text-[20px] font-normal leading-[32px] mb-4">30</p>
+              <p className="text-[20px] font-normal leading-[32px] mb-4">500</p>
+            </div>
             <button className="w-full md:text-[14px] text-[12px] text-white bg-[#2e7bff] border border-solid border-[#2e7bff] md:py-3 py-2 px-[30px] text-center inline-block rounded-[25px] font-medium capitalize tracking-[0.5px] transition-all duration-[0.3s] hover:opacity-90">
-              {t('УЗНАТЬ РЕЗУЛЬТАТ')}
+              {t("УЗНАТЬ РЕЗУЛЬТАТ")}
             </button>
             <ToastContainer />
           </form>
