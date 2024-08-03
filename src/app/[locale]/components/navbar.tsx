@@ -26,7 +26,7 @@ const Navbar = () => {
           <li className="mx-9">
             <Link
               className="text-[14px] leading-[1.55] font-bold border border-solid border-transparent transition-all duration-[0.3s] ease-in-out px-7 py-2 rounded-[30px] hover:border-[#2e7bff] active:opacity-85"
-              href={"#portfolio"}
+              href={"/#portfolio"}
             >
               {t("КЕЙСЫ")}
             </Link>
@@ -34,7 +34,7 @@ const Navbar = () => {
           <li className="mx-9">
             <Link
               className="text-[14px] leading-[1.55] font-bold border border-solid border-transparent transition-all duration-[0.3s] ease-in-out px-7 py-2 rounded-[30px] hover:border-[#2e7bff] active:opacity-85"
-              href={"#reviews"}
+              href={"/#reviews"}
             >
               {t("ОТЗЫВЫ")}
             </Link>
@@ -42,7 +42,7 @@ const Navbar = () => {
           <li className="mx-9">
             <Link
               className="text-[14px] leading-[1.55] font-bold border border-solid border-transparent transition-all duration-[0.3s] ease-in-out px-7 py-2 rounded-[30px] hover:border-[#2e7bff] active:opacity-85"
-              href={"#contact"}
+              href={"/#contact"}
             >
               {t("КОНТАКТЫ")}
             </Link>
