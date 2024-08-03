@@ -30,19 +30,17 @@ const AuthForm: React.FC = () => {
     setCheckValue(event.target.value);
   };
 
-  const sendMessage = (e: React.FormEvent) => {
+  const sendMessage = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const notify = () => toast.success("Your data has been sent successfully!");
     if (!value || !inputValue) {
-      toast.error("Please fill in both fields.");
+      toast.error("Please fill in following fields.");
       return;
     }
     const token = "7229813830:AAFlDf6El0NDlFH5wod5x8vT1jV-IJhEKU8";
     const chat_id = "5730538728";
     const url = `https://api.telegram.org/bot${token}/sendMessage`;
-    // const name = document.getElementById("name").value;
-    // const phoneNumber = document.getElementById("phone-number").value;
-    const messageContent = `Name: ${inputValue} \nPhone Number: ${value} \nPromotion Region: ${regValue} \nAverage bill: ${checkValue}`;
+    const messageContent = `Name: ${inputValue} \nPhone Number: ${value} \nPromotion Region: ${regValue} \nAverage bill: ${checkValue} \nClients count:${sliderValue}`;
 
     axios({
       url: url,
@@ -53,8 +51,12 @@ const AuthForm: React.FC = () => {
       },
     })
       .then((res) => {
-        // document.getElementById("message-form")?.onreset();
-        notify();
+        setInputValue(""),
+          setValue(""),
+          setRegValue(""),
+          setCheckValue(""),
+          setSliderValue(undefined),
+          notify();
       })
       .catch((err) => {
         const notify = () =>
@@ -96,7 +98,7 @@ const AuthForm: React.FC = () => {
               value={value}
               type="tel"
               international
-              defaultCountry="UA"
+              defaultCountry="UZ"
               required
               onChange={setValue}
               className="w-full md:h-[50px] text-black h-11 bg-[#fff] rounded-[30px] text-base md:px-5 md:mb-6 font-normal border border-solid border-[#e0e0e0] p-0 px-4 mb-5 outline-none cursor-pointer"

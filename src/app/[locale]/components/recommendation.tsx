@@ -11,7 +11,7 @@ const Recommendation: React.FC = () => {
   return (
     <section className="lg:py-12 py-8">
       <div className="recommendation-container max-w-7xl px-3 mx-auto flex lg:justify-between lg:flex-row flex-col items-center">
-        <div className="lg:w-[48%] lg:items-start w-[80%] flex flex-col items-center text-black">
+        <div className="lg:w-[48%] lg:items-start w-full flex flex-col items-center text-black">
           <div className="w-[75%] md:mb-10 lg:text-left mb-6 mx-auto text-center">
             <h1 className="md:text-[42px] md:leading-[65px] md:font-bold text-[32px] leading-[42px] font-semibold mb-3 lg:relative">
               {t("Меня рекомендуют")}{" "}
@@ -42,7 +42,7 @@ const Recommendation: React.FC = () => {
             advertPrice={420}
           />
         </div>
-        <div className="lg:w-[48%] lg:items-start w-[80%] flex flex-col items-center text-black">
+        <div className="lg:w-[48%] lg:items-start w-full flex flex-col items-center text-black">
           <RecommendationCard
             cardTitle={t('Руслан')}
             cardText={t("Открытка кубики")}
@@ -59,14 +59,14 @@ const Recommendation: React.FC = () => {
             applications="2,5$"
             advertPrice={450}
           />
-          <div className="flex">
-            <h3 className="text-[28px] leading-[38px] font-bold">
+          <div className="flex items-center">
+            <h3 className="md:text-[28px] md:leading-[38px] md:font-bold text-[25px] leading-[30px] font-semibold">
               {t('Хотите такой же результат?')}
             </h3>
-            <div className="border border-solid border-[#2e7bff] bg-[#2e7bff] rounded-[30px] inline-block py-3 px-8 text-center cursor-pointer hover:opacity-90">
+            <div className="border border-solid border-[#2e7bff] bg-[#2e7bff] rounded-[30px] flex items-center justify-center px-8 h-14 text-center cursor-pointer hover:opacity-90">
               <a
                 href="#contact"
-                className="text-white text-[14px] leading-[1.55] font-semibol"
+                className="text-white text-[14px] leading-[1.55] font-semibold"
               >
                 {t('ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ')}
               </a>

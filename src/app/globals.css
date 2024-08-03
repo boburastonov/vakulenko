@@ -226,6 +226,11 @@ body {
   .social {
     margin-bottom: 20px;
   }
+
+  .card-pr {
+    margin-left: auto;
+    margin-right: 50px !important;
+  }
 }
 
 @media (max-width: 413px) {
@@ -253,5 +258,13 @@ body {
 
   .cards .cards-box .card-container .card-content .link-btn {
     margin-top: 10px;
+  }
+  .solve-card {
+    width: 200px !important;
+    margin-left: -30px;
+  }
+
+  .swiper-item {
+    margin-left: 45px;
   }
 }

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -15,8 +15,9 @@ const Hero: React.FC = () => {
     setInputValue(event.target.value);
   };
 
-  const sendMessage = (e: React.FormEvent) => {
+  const sendMessage = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    
     const notify = () => toast.success("Your data has been sent successfully!");
     if (!value || !inputValue) {
       toast.error("Please fill in both fields.");
@@ -25,8 +26,6 @@ const Hero: React.FC = () => {
     const token = "7229813830:AAFlDf6El0NDlFH5wod5x8vT1jV-IJhEKU8";
     const chat_id = "5730538728";
     const url = `https://api.telegram.org/bot${token}/sendMessage`;
-    // const name = document.getElementById("name").value;
-    // const phoneNumber = document.getElementById("phone-number").value;
     const messageContent = `Name: ${inputValue} \nPhone Number: ${value}`;
 
     axios({
@@ -38,7 +37,8 @@ const Hero: React.FC = () => {
       },
     })
       .then((res) => {
-        // document.getElementById("message-form")?.onreset();
+        setInputValue("");
+        setValue("")
         notify();
       })
       .catch((err) => {
@@ -63,7 +63,7 @@ const Hero: React.FC = () => {
             )}
           </p>
         </div>
-        <div className="lg:w-[40%] lg:p-16 lg:ml-6 md:w-[60%] md:p-14 p-10 m-0 border-[3px] border-solid border-[#2e7bff] text-center text-white bg-[#0000009a]">
+        <div className="lg:w-[40%] lg:p-16 lg:ml-6 md:w-[60%] w-[95%] md:p-14 p-10 m-0 border-[3px] border-solid border-[#2e7bff] text-center text-white bg-[#0000009a]">
           <h2 className="lg:mb-8 md:mb-6 md:text-[24px] leading-[37px] mb-4 text-[22px] font-bold">
             {t("СТРАТЕГИЯ БЕСПЛАТНО")}
           </h2>
@@ -87,11 +87,14 @@ const Hero: React.FC = () => {
               value={value}
               type="tel"
               international
-              defaultCountry="UA"
+              defaultCountry="UZ"
               onChange={setValue}
               className="w-full md:h-[50px] h-11 bg-[#2e2e2e] rounded-[30px] text-base md:font-bold md:px-5 md:mb-6 font-semibold border border-solid border-[#e0e0e0] p-0 px-4 mb-5 cursor-pointer"
             />
-            <button className="w-full md:text-[14px] text-[12px] text-white bg-[#2e7bff] border border-solid border-[#2e7bff] md:py-3 py-2 px-[30px] text-center inline-block rounded-[25px] font-medium capitalize tracking-[0.5px] transition-all duration-[0.3s] hover:opacity-90">
+            <button
+              type="submit"
+              className="w-full md:text-[14px] text-[12px] text-white bg-[#2e7bff] border border-solid border-[#2e7bff] md:py-3 py-2 px-[30px] text-center inline-block rounded-[25px] font-medium capitalize tracking-[0.5px] transition-all duration-[0.3s] hover:opacity-90"
+            >
               {t("ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ")}
             </button>
             <ToastContainer />

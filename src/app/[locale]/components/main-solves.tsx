@@ -24,7 +24,7 @@ const MainSolves: React.FC = () => {
           </p>
         </div>
         <div className="flex md:flex-row flex-col justify-between w-[45%]">
-          <div className="md:w-[46%] w-[100%]">
+          <div className="md:w-[46%] w-full">
             <SolveCard
               imgSource={Brending}
               cardHeading={t("Брендинг")}
@@ -41,7 +41,7 @@ const MainSolves: React.FC = () => {
               cardText={t("Креативы, баннеры, лендинги, оформление социальный сетей")}
             />
           </div>
-          <div className="md:w-[46%] w-full -mt-9">
+          <div className="card-pr md:w-[46%] w-full -mt-9">
             <SolveCard
               imgSource={SMM}
               cardHeading={t("СММ")}
@@ -55,7 +55,7 @@ const MainSolves: React.FC = () => {
             <SolveCard
               imgSource={Copywriting}
               cardHeading={t("Копирайтинг")}
-              cardText={("Контент-планы, офферы, продающие текста, коммерчесские предложения")}
+              cardText={t("Контент-планы, офферы, продающие текста, коммерчесские предложения")}
             />
           </div>
         </div>

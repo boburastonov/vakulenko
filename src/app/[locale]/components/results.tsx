@@ -227,12 +227,16 @@ const Results: React.FC = () => {
             />
           </div>
 
-          <button
-            className="text-white text-[16px] leading-[1.55] font-semibold bg-[#237bff] border-[2px] border-solid border-[#2e7bff] rounded-[30px] inline-block py-4 px-14 mr-auto mb-16 hover:opacity-90"
-            onClick={() => setOpen(true)}
-          >
-            {t('Больше кейсов')}
-          </button>
+          {!open ? (
+            <button
+              className="text-white text-[16px] leading-[1.55] font-semibold bg-[#237bff] border-[2px] border-solid border-[#2e7bff] rounded-[30px] inline-block py-4 px-14 mr-auto mb-16 hover:opacity-90"
+              onClick={() => setOpen(true)}
+            >
+              {t("Больше кейсов")}
+            </button>
+          ) : (
+            ""
+          )}
           {open ? (
             <>
               <div className="cards-box md:mb-36 mb-10">

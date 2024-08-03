@@ -21,7 +21,7 @@ const RecommendationCard: React.FC<cardData> = ({
 }) => {
   const t = useTranslations();
   return (
-    <div className="w-[85%] md:p-10 p-2 text-black border-t-[6px] border-solid border-[#2e7bff] shadow-[0px_0px_10px_3px_#0000007f] mb-14 ">
+    <div className="w-[70%] md:p-10 p-2 text-black border-t-[6px] border-solid border-[#2e7bff] shadow-[0px_0px_10px_3px_#0000007f] mb-14 ">
       <div className="flex justify-between mb-6">
         <div className="w-[60%]">
           <h3 className="md:text-[22px] md:leading-[34px] text-[18px] leading-[28px] font-bold mb-3">

@@ -19,6 +19,7 @@ const Footer: React.FC = () => {
   const [activeButton, setActiveButton] = useState("button1");
   const [inputValue, setInputValue] = useState<string>("");
   const [value, setValue] = useState<string | undefined>(undefined);
+  const [areaValue, setAreaValue] = useState<string>("");
   const handleChange = (event: any) => {
     setInputValue(event.target.value);
   };
@@ -37,9 +38,7 @@ const Footer: React.FC = () => {
     const token = "7229813830:AAFlDf6El0NDlFH5wod5x8vT1jV-IJhEKU8";
     const chat_id = "5730538728";
     const url = `https://api.telegram.org/bot${token}/sendMessage`;
-    // const name = document.getElementById("name").value;
-    // const phoneNumber = document.getElementById("phone-number").value;
-    const messageContent = `Name: ${inputValue} \nPhone Number: ${value}`;
+    const messageContent = `Name: ${inputValue} \nPhone Number: ${value} \nComment: ${setAreaValue}`;
 
     axios({
       url: url,
@@ -50,7 +49,9 @@ const Footer: React.FC = () => {
       },
     })
       .then((res) => {
-        // document.getElementById("message-form")?.onreset();
+        setInputValue("");
+        setValue("");
+        setAreaValue("");
         notify();
       })
       .catch((err) => {
@@ -133,7 +134,7 @@ const Footer: React.FC = () => {
           </div>
           <div className="w-[48%] flex flex-col items-center">
             <h1 className="md:text-[42px] md:leading-[65px] md:font-bold text-[37px] leading-[50px] font-semibold text-center mb-8 md:m-0 mt-6">
-              {t('Есть вопросы? - Пишите!')}
+              {t("Есть вопросы? - Пишите!")}
             </h1>
             <form onSubmit={sendMessage} id="message-form">
               <input
@@ -150,16 +151,17 @@ const Footer: React.FC = () => {
                 value={value}
                 type="tel"
                 international
-                defaultCountry="UA"
+                defaultCountry="UZ"
                 onChange={setValue}
                 className="w-full md:h-[50px] h-11 bg-[#2e2e2e] rounded-[30px] text-base md:font-bold md:px-5 md:mb-6 font-semibold border border-solid border-[#e0e0e0] p-0 px-4 mb-5 cursor-pointer"
               />
               <textarea
                 rows={3}
                 placeholder={t("Сообщение")}
+                value={areaValue}
                 className="w-full md:min-h-[110px] h-11 bg-[#2e2e2e] rounded-[30px] text-base md:font-bold md:px-5 md:mb-6 font-semibold border border-solid border-[#e0e0e0] p-0 py-3 px-4 mb-5 outline-none cursor-pointer"
                 required
-              ></textarea>
+              />
               <button className="w-full md:text-[14px] text-[12px] text-white bg-[#2e7bff] border border-solid border-[#2e7bff] md:py-3 py-2 px-[30px] text-center inline-block rounded-[25px] font-medium capitalize tracking-[0.5px] transition-all duration-[0.3s] hover:opacity-90">
                 {t("ЗАДАТЬ ВОПРОС")}
               </button>
@@ -187,7 +189,7 @@ const Footer: React.FC = () => {
             </Link>
           </div>
           <h1 className="text-center">
-            @ 2015-2024. {t('Все права защищены')} <br />
+            @ 2015-2024. {t("Все права защищены")} <br />
             {t("Политика Конфиденциальности")}
           </h1>
         </div>

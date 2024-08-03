@@ -45,8 +45,8 @@ const ClientComments: React.FC = () => {
             spaceBetween: 20,
           },
           768: {
-            slidesPerView: 4,
-            spaceBetween: 40,
+            slidesPerView: 3,
+            spaceBetween: 30,
           },
           1024: {
             slidesPerView: 5,
@@ -57,7 +57,7 @@ const ClientComments: React.FC = () => {
         modules={[Autoplay, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide>
+        <SwiperSlide className="swiper-item">
           <div className="w-[200px] h-[400px]">
             <Image
             className="w-full h-full"
@@ -68,7 +68,7 @@ const ClientComments: React.FC = () => {
             />
           </div>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="swiper-item">
           <div className="w-[200px] h-[400px]">
             <Image
             className="w-full h-full"
@@ -79,7 +79,7 @@ const ClientComments: React.FC = () => {
             />
           </div>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="swiper-item">
           <div className="w-[200px] h-[400px]">
             <Image
             className="w-full h-full"
@@ -90,7 +90,7 @@ const ClientComments: React.FC = () => {
             />
           </div>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="swiper-item">
           <div className="w-[200px] h-[400px]">
             <Image
             className="w-full h-full"
@@ -101,7 +101,7 @@ const ClientComments: React.FC = () => {
             />
           </div>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="swiper-item">
           <div className="w-[200px] h-[400px]">
             <Image
             className="w-full h-full"
@@ -112,7 +112,7 @@ const ClientComments: React.FC = () => {
             />
           </div>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="swiper-item">
           <div className="w-[200px] h-[400px]">
             <Image
             className="w-full h-full"
