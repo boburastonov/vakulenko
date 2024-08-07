@@ -158,7 +158,7 @@ const Footer: React.FC = () => {
               <textarea
                 rows={3}
                 placeholder={t("Сообщение")}
-                value={areaValue}
+                onChange={(e) => setAreaValue(e.target.value)}
                 className="w-full md:min-h-[110px] h-11 bg-[#2e2e2e] rounded-[30px] text-base md:font-bold md:px-5 md:mb-6 font-semibold border border-solid border-[#e0e0e0] p-0 py-3 px-4 mb-5 outline-none cursor-pointer"
                 required
               />
