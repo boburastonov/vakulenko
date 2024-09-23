@@ -11,7 +11,7 @@ import { useTranslations } from "next-intl";
 const Navbar = () => {
   const t = useTranslations();
   const [open, setOpen] = useState<boolean>(false);
-  const [activeButton, setActiveButton] = useState("button1");
+  const [activeButton, setActiveButton] = useState('');
 
   useEffect(() => {
     setActiveButton(window.location.pathname);
